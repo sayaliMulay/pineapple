@@ -7,6 +7,17 @@ style, substance, and completeness following the exercise.
 _We've included all of the Angular Material framework in the project for your ease. Feel free to use it
 at your discretion._
 
+## Brief Overview
+
+I have added custom filter at "src\app\filter.pipe.ts", where I have added logic to search in column of table.
+Using Mat-toolbar of Angular Material, I have added search icon at top which toggles with toolbar.
+
+Logic for search bar is-
+1) Check all items of array one by one
+2) Using Filter function return new array of items in which search string is present.
+3) By using this "filter" as pipe operator, I have used it in for loop of table to sort the table content
+4) Search key is passed to "filter" pipe by adding ngModel to input type searchbar.
+
 ## Preparation
 
 - [ ] Make sure you have [Node](https://nodejs.org/en/download) installed on your
