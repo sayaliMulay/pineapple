@@ -5,13 +5,15 @@ $card-shadow: 0 4px 9px rgba(0, 0, 0, .2);
   background: $card-bg;
   border-radius: 4px;
   box-shadow: $card-shadow;
-  margin: 2rem auto;
+  margin: 6rem auto;
   width: 1000px;
+  padding: 2%;
 
   &__caption {
     font-size: 1.25rem;
     font-weight: 500;
     padding: .25rem;
+    padding-bottom: 2rem;
     text-align: left;
   }
 
@@ -22,6 +24,44 @@ $card-shadow: 0 4px 9px rgba(0, 0, 0, .2);
     th {
       padding: .25rem;
       text-align: left;
+      font-size: 1rem;
     }
   }
+}
+
+header{
+  position: fixed;
+  top: 0;
+   z-index: 11;
+  transition: all 250ms ease-in-out;
+}
+.main-header{
+  @extend header;
+  &.hidden{
+    opacity: 0;
+  }
+}
+.search-block{
+  width: 0%;
+  right: 0;
+  @extend header;
+  background: #fff;
+  &.active{
+    width: 100%;
+  }
+  .search-control{
+    flex: 1;
+    font-size: 1rem;
+    border: 0;
+    outline: none;
+    padding-left: 10px;
+  }
+}
+
+.mat-button{
+  color: black;
+}
+
+.custom_width{
+  width: 330%;
 }

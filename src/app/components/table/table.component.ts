@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef, ViewChild } from '@angular/core';
 import { DeviceTable } from 'src/app/models/device-table.model';
 import { DeviceService } from 'src/app/services/device.service';
 
@@ -10,6 +10,10 @@ import { DeviceService } from 'src/app/services/device.service';
 export class TableComponent implements OnInit {
 
   deviceTable: DeviceTable;
+  @ViewChild('searchbar') searchbar: ElementRef;
+  searchText = '';
+  title: string = 'pineapple';
+  toggleSearch: boolean = false;
 
   constructor(private deviceService: DeviceService) { }
 
@@ -21,6 +25,15 @@ export class TableComponent implements OnInit {
     this.deviceService.getAll().subscribe((data: DeviceTable) => {
       this.deviceTable = data;
     });
+  }
+
+  openSearch() {
+    this.toggleSearch = true;
+    this.searchbar.nativeElement.focus();
+  }
+  searchClose() {
+    this.searchText = '';
+    this.toggleSearch = false;
   }
 
 }

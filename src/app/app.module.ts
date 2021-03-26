@@ -6,17 +6,37 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { DemoMaterialModule } from './modules/material.module';
+import { FilterPipe} from './filter.pipe';
+import { FormsModule } from '@angular/forms';
+import {
+  MatTabsModule,
+  MatButtonModule,
+  MatInputModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatListModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    FormsModule,
+    MatButtonModule, 
+    MatIconModule,
+    MatTabsModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
